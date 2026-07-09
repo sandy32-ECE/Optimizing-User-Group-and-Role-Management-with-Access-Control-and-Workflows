@@ -1,0 +1,230 @@
+# ServiceNow User Access Management with Workflow Automation
+
+## Project Overview
+
+This project demonstrates the implementation of a secure **User, Group, Role Management System** in **ServiceNow** using Role-Based Access Control (RBAC), Access Control Lists (ACLs), and Flow Designer automation.
+
+The application provides controlled access for different users while automating task assignment, approvals, and notifications to improve operational efficiency and governance.
+
+---
+
+## Features
+
+* User Management
+
+  * Create users (Alice and Bob)
+  * Assign user roles
+
+* Group Management
+
+  * Create Project Team Group
+  * Add users to the group
+
+* Role Management
+
+  * Project Manager Role
+  * Team Member Role
+
+* Custom Tables
+
+  * Project Table
+  * Task Table
+
+* Application Modules
+
+  * Project Module
+  * Task Module
+
+* Access Control Lists (ACLs)
+
+  * Full access for Project Manager
+  * Restricted access for Team Member
+  * Bob can update only **Status** and **Comments** fields
+
+* Workflow Automation
+
+  * Automatic task status updates
+  * Approval workflow
+  * Notification to Project Manager
+
+---
+
+## Project Objectives
+
+* Define clear user responsibilities.
+* Implement secure role-based access control.
+* Restrict unauthorized data modification.
+* Automate project task workflows.
+* Improve collaboration and accountability.
+* Strengthen governance and security.
+
+---
+
+## Technologies Used
+
+* ServiceNow
+* Flow Designer
+* Access Control Lists (ACLs)
+* Role-Based Access Control (RBAC)
+* Application Menu & Modules
+* Custom Tables
+* Notifications
+
+---
+
+## Project Architecture
+
+```
+Users
+│
+├── Alice (Project Manager)
+│      │
+│      ├── Create Projects
+│      ├── Assign Tasks
+│      ├── Approve Tasks
+│      └── Full Access
+│
+└── Bob (Team Member)
+       │
+       ├── View Assigned Tasks
+       ├── Update Status
+       ├── Add Comments
+       └── Limited Access
+```
+
+---
+
+## Execution Roadmap
+
+### Phase 1 – Requirement Analysis
+
+* Gather business requirements
+* Define user roles
+* Identify security requirements
+
+### Phase 2 – Core Platform Setup
+
+* Create users
+* Create Project Team Group
+* Create custom roles
+
+### Phase 3 – Data Configuration
+
+* Create Project Table
+* Create Task Table
+* Configure table fields
+
+### Phase 4 – User & Role Assignment
+
+* Add users to the group
+* Assign Project Manager role to Alice
+* Assign Team Member role to Bob
+
+### Phase 5 – Security
+
+* Configure Application Access
+* Create ACLs
+* Validate permissions
+
+### Phase 6 – Automation
+
+* Build Flow Designer workflow
+* Configure approvals
+* Configure notifications
+
+### Phase 7 – Testing
+
+* Functional Testing
+* ACL Testing
+* Workflow Testing
+* Security Validation
+
+### Phase 8 – Project Closure
+
+* Demonstration
+* Documentation
+* Final Validation
+
+---
+
+## User Roles
+
+### Project Manager (Alice)
+
+Responsibilities:
+
+* Create Projects
+* Assign Tasks
+* Monitor Progress
+* Approve Completed Tasks
+* Full access to all project records
+
+### Team Member (Bob)
+
+Responsibilities:
+
+* View assigned tasks
+* Update task status
+* Add task comments
+* Cannot create or delete projects
+* Cannot modify restricted fields
+
+---
+
+## Access Control
+
+| User  | Read | Create | Update                 | Delete |
+| ----- | ---- | ------ | ---------------------- | ------ |
+| Alice | ✅    | ✅      | ✅                      | ✅      |
+| Bob   | ✅    | ❌      | Status & Comments Only | ❌      |
+
+---
+
+## Workflow
+
+1. Alice creates a project.
+2. Alice assigns a task to Bob.
+3. Bob updates task progress.
+4. When Bob marks the task as completed:
+
+   * Status is updated automatically.
+   * Approval request is sent to Alice.
+   * Alice receives a notification.
+5. Alice reviews and approves the task.
+
+---
+
+## Testing
+
+The following scenarios were validated:
+
+* User creation
+* Group assignment
+* Role assignment
+* Project creation
+* Task assignment
+* ACL restrictions
+* Workflow execution
+* Notification delivery
+* Approval process
+
+
+---
+
+## Expected Outcomes
+
+* Secure role-based access management.
+* Controlled access using ACLs.
+* Automated approvals and notifications.
+* Improved project tracking.
+* Enhanced collaboration.
+* Increased operational efficiency.
+* Strong governance and compliance.
+
+---
+
+## Conclusion
+
+This ServiceNow project demonstrates the implementation of a secure and automated User Access Management System using Users, Groups, Roles, Custom Tables, ACLs, and Flow Designer. The solution enforces role-based security, automates task approvals and notifications, improves accountability, and streamlines project management while following the principle of least privilege.
+
+
